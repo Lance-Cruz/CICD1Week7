@@ -20,4 +20,13 @@ public class PersonService {
         return repo.findByEmployeeId(id)
                 .orElseThrow(() -> new IllegalArgumentException("Person not found"));
     }
+
+    public Person update(Person p){
+        return repo.save(p);
+    }
+
+    public Person delete(Person p) {
+        repo.delete(p);
+        return p;
+    }
 }
