@@ -26,4 +26,14 @@ public class PersonController {
     public Person byEmployeeId(@PathVariable String id) {
         return service.findByEmployeeId(id);
     }
+
+    @PutMapping("/{id}")
+    public Person update(@Valid @RequestBody Person person) {
+        return service.update(person);
+    }
+
+    @DeleteMapping
+    public Person delete(@Valid @RequestBody Person person) {
+        return service.delete(person);
+    }
 }
